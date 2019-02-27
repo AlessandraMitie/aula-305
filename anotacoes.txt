@@ -1,0 +1,27 @@
+* Acessar a pasta
+* py -m venv env
+* source env/Scripts/activate
+* pip install django
+* pip freeze
+* pip freeze > requirements.txt
+* django-admin startproject site_projeto
+* python manage.py runserver
+    ** comando que roda a apliação
+    ** para trocar a porta: py manage.py runserver 7000
+      ** não vai mostrar na tela que rodou. Dar ctrl+c
+      ** copiar o link e colar no navegador
+* django-admin startapp landing
+***** Se fechar o terminal, tem que rodar o ambiente de novo
+     - criar uma pasta static (entra o css, js) dentro da pasta landing
+     - criar uma pasta templates (entra o html) dentro da pasta landing
+   ** Na pasta settings.py, acrescentar 'landing' em INSTALLED_APPS
+     - criar dentro da pasta static as pastas css, images e js
+     - criar arquivo index.html dentro da pasta templates
+   ** toda vez que renderiza precisa de uma request no parâmetro do método
+   ** toda função precisa de um retorno
+
+
+        urlpatterns = [
+            path('admin/', admin.site.urls),
+            path('', views.mostrar_index)
+        """deixar em branco, não precisa de nenhuma rota para cair no index """
